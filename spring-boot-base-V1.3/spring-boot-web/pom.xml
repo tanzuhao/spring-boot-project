@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.tanzuhao</groupId>
+		<artifactId>spring-boot-base-V1.3</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.tanzuhao.web</groupId>
+	<artifactId>spring-boot-web</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+	<name>spring-boot-web</name>
+	<description>Demo project for spring-boot-web</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<!-- swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+		<!-- 依赖spring-boot-service模块:依赖有传递性，因为spring-boot-service拥有对spring-boot-util包的依赖,所以spring-boot-web也拥有 -->
+		<dependency>
+			<groupId>com.tanzuhao.service</groupId>
+			<artifactId>spring-boot-service</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+	</dependencies>
+	
+	<!--pom加入打成可执行JAR包插件,其他子模块(data、util、service)不需要该插件 -->
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
